@@ -5,7 +5,7 @@ project(easy_malloc C)
 set(CMAKE_C_STANDARD 11)
 
 # Utwórz target 'project1' i dodaj do niego pliki źródlowe:
-add_executable(easy_malloc main.c)
+add_executable(easy_malloc main.c heap.h heap.c)
 
 #cmake_minimum_required(VERSION 3.17)
 #project(project1 C)
