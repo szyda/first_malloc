@@ -1,0 +1,3 @@
+/Users/sszyda/Desktop/SEMESTR V/SO2/first_malloc/cmake-build-debug/CMakeFiles/easy_malloc.dir
+/Users/sszyda/Desktop/SEMESTR V/SO2/first_malloc/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/sszyda/Desktop/SEMESTR V/SO2/first_malloc/cmake-build-debug/CMakeFiles/rebuild_cache.dir
