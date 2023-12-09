@@ -116,7 +116,7 @@ void memory_free(void *address) {
     }
 }
 
-int validate_metadata(struct memory_chunk_t *metadata) {
+int validate_address(struct memory_chunk_t *metadata) {
     struct memory_chunk_t *current_metadata = memory_manager.first_memory_chunk;
     while (current_metadata) {
         if (current_metadata == metadata) {
