@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "heap.h"
+#include "heap.c"
 
 int UTEST1(void);
 int UTEST2(void);
