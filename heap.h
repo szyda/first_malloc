@@ -29,5 +29,6 @@ void memory_init(void *address, size_t size);
 void *memory_malloc(size_t size);
 void memory_free(void *address);
 int validate_address(struct memory_chunk_t *current_metadata);
+int heap_validate(void);
 
 #endif //EASY_MALLOC_HEAP_H
