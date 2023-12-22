@@ -28,5 +28,5 @@ The manager includes custom versions of the `malloc`, `calloc`, `free`, and `rea
 - `get_pointer_type`: Classifies a pointer based on its relation to different areas of the heap.
 - `heap_validate`: Validates the consistency of the heap, checking for potential errors.
 
-
+<br><br/>
 **Note**: The project utilizes fences, metadata, and control structures to enhance error detection and offers a comprehensive memory management solution.
