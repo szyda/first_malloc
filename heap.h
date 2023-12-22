@@ -10,9 +10,9 @@
 
 struct memory_manager_t
 {
-    void *memory_start; // start address
-    size_t memory_size; // all memory avaiable for the allocation
-    struct memory_chunk_t *first_memory_chunk; // address of first memory block
+    void *memory_start;
+    size_t memory_size;
+    struct memory_chunk_t *first_memory_chunk;
 };
 
 struct memory_chunk_t
@@ -21,14 +21,34 @@ struct memory_chunk_t
     struct memory_chunk_t* next;
     size_t size;
     int free;
+    int metadata;
+};
+
+enum pointer_type_t
+{
+    pointer_null,
+    pointer_heap_corrupted,
+    pointer_control_block,
+    pointer_inside_fences,
+    pointer_inside_data_block,
+    pointer_unallocated,
+    pointer_valid
 };
 
 struct memory_manager_t memory_manager;
 
-void memory_init(void *address, size_t size);
-void *memory_malloc(size_t size);
-void memory_free(void *address);
-int validate_address(struct memory_chunk_t *current_metadata);
+int heap_setup(void);
+void heap_clean(void);
+
+void* heap_malloc(size_t size);
+void* heap_calloc(size_t number, size_t size);
+void* heap_realloc(void* memblock, size_t count);
+void  heap_free(void* memblock);
 int heap_validate(void);
+size_t   heap_get_largest_used_block_size(void);
+enum pointer_type_t get_pointer_type(const void* const pointer);
+
+int calculate_metadata(struct memory_chunk_t *memory_block);
+
 
 #endif //EASY_MALLOC_HEAP_H
